@@ -1,5 +1,6 @@
 'use strict';
 import { forkiSearch } from "./forkiFecht.js";
+//import {cardRecipe} from "./cardRecipe";
 
 async function mostrarReceta() {
     const recetas = document.getElementById('recetario-cards');
@@ -7,16 +8,16 @@ async function mostrarReceta() {
     const recipes = await callRecipes(busqueda);
     recipes.data.recipes.map(receta => {
     console.log(receta.title);
-    
+
     const recipesName = document.createElement('p');
     recipesName.style.fontWeight = "bold";
-    recipesName.style.fontSize = "2rem";
+    recipesName.style.fontSize = "1.7rem";
     recipesName.textContent = receta.title;
 
     const imgRecipes = document.createElement('img');
     imgRecipes.src = receta.image_url;
     imgRecipes.alt = receta.name;
-    imgRecipes.style = "width: 100%; height:100px; objectFit = cover; objectPosition: center";
+    imgRecipes.style = "width: 100%; height:60%; objectFit = cover; objectPosition: center";
 
     const publisher = document.createElement('p');
     publisher.style.fontSize = "1.3rem";
@@ -33,12 +34,12 @@ async function mostrarReceta() {
     divInfo.appendChild(publisher);
     divInfo.appendChild(id);
 
-    divInfo.style = "width:100%;";
+    divInfo.style = "width:auto; display: flex; flex-direction: column; align-items: left;";
     recetas.style.border = "0.5rem solid #ffbf69";
     recetas.style.borderRadius = "1.2rem";
     recetas.append(divInfo);
 })
-}
+};
 
 function limpiarCampo(){
     buscar.value = "";
@@ -67,7 +68,6 @@ limpiar.textContent = "Limpiar";
 limpiar.id = "Limpiar";
 limpiar.onclick = limpiarCampo;
 limpiar.style = "font-size: 1.2rem; width: 10%; height: 2.5rem; border: none; border-radius: 1.2rem; background-color:#ee974bc2; font-weight: bolder;";
-
 
 buscador.append(buscar);
 buscador.append(boton);

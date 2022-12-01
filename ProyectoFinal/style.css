@@ -7,6 +7,7 @@
     --color-secundario: #feb371;
 }
 
+@media (min-width: 700px){
 *{
     margin: 0;
     padding: 0;
@@ -23,11 +24,13 @@ body{
     display: flex;
     flex-direction: column;
     background: linear-gradient(90deg, #FB924E 20%, var(--color-secundario) 80%);
+
 }
 
 p{
     font-size: 1.6rem;
     font-family: 'Raleway', sans-serif;
+    width: auto;
 }
 
 h1{
@@ -60,7 +63,9 @@ h3,.adorno{
 }
 
 .logo{
-    width: 9rem;
+    width: 100%;
+    max-width: 90px;
+    height: auto;
 }
 
 .title{
@@ -83,7 +88,7 @@ h3,.adorno{
     justify-content: center;
     align-items: center;
     margin: 3rem;
-    padding-left: 15rem;
+    padding-left: 10rem;
 }
 
 
@@ -112,10 +117,11 @@ h3,.adorno{
 
 .recetario-cards{
     display: grid;
-    grid-template-columns: repeat(3,10rem 1fr);
-    grid-template-rows: repeat(auto-fill, 10rem 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-rows: 18rem;
     padding: 1.5rem;
     gap: 1em;
-    margin: 2rem;
     align-items: center;
+    column-gap: 2%;
+}
 }
